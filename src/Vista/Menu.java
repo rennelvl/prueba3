@@ -34,6 +34,7 @@ public class Menu extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jmi_agregaralumno = new javax.swing.JMenuItem();
         jmi_mostraralumnos = new javax.swing.JMenuItem();
+        jmi_eliminaralumno = new javax.swing.JMenuItem();
         jmi_salir = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jmi_agregardocente = new javax.swing.JMenuItem();
@@ -91,6 +92,14 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu1.add(jmi_mostraralumnos);
 
+        jmi_eliminaralumno.setText("Eliminar");
+        jmi_eliminaralumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_eliminaralumnoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jmi_eliminaralumno);
+
         jmi_salir.setText("Salir");
         jmi_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,6 +136,10 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jmi_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_salirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jmi_salirActionPerformed
+
     private void jmi_mostraralumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_mostraralumnosActionPerformed
         new MosstrarAlumno().setVisible(true);
     }//GEN-LAST:event_jmi_mostraralumnosActionPerformed
@@ -135,9 +148,9 @@ public class Menu extends javax.swing.JFrame {
         new AgregarAlumno().setVisible(true);
     }//GEN-LAST:event_jmi_agregaralumnoActionPerformed
 
-    private void jmi_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_salirActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_jmi_salirActionPerformed
+    private void jmi_eliminaralumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_eliminaralumnoActionPerformed
+        new Eliminar().setVisible(true);
+    }//GEN-LAST:event_jmi_eliminaralumnoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,6 +196,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem jmi_agregaralumno;
     private javax.swing.JMenuItem jmi_agregardocente;
+    private javax.swing.JMenuItem jmi_eliminaralumno;
     private javax.swing.JMenuItem jmi_mostraralumnos;
     private javax.swing.JMenuItem jmi_mostrardocente;
     private javax.swing.JMenuItem jmi_salir;
