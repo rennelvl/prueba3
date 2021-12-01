@@ -6,7 +6,9 @@ import tablas.Alumnos;
 import java.sql.Connection;
 import java.sql.PreparedStatement; 
 import java.sql.SQLException;
-
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -119,7 +121,86 @@ public class Registro {
     
     }
     
-    
+    public Alumnos buscarporrut(int rut){
+        Alumnos alumno = new Alumnos();
+        try {
+            Conexion conect = new Conexion();
+            Connection conn = conect.tenerConexion();
+            
+            String query = "SELECT * FROM alumnos  WHERE rut =?";
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            stmt.setInt(1, rut);
+            
+            ResultSet resu = stmt.executeQuery();
+            
+            if (resu.next()) {
+                alumno.setIdAlumno(resu.getInt("idalumno"));
+                alumno.setRut(resu.getInt("rut"));
+                alumno.setNombre(resu.getString("nombre"));
+                alumno.setApellido(resu.getString("apellido"));
+                alumno.setCurso(resu.getString("curso"));
+                alumno.setPase_movilidad(resu.getBoolean("pase_movilidad"));             
+                              
+                            
+            }
+            resu.close();
+            stmt.close();
+            conn.close();
+            
+            
+            
+        } catch (SQLException e) {
+            System.out.println("Error al listar el libro");
+            
+        } return alumno;
+    }    
+    public List<Alumnos> buscarTodos(){
+        
+        List<Alumnos> lista = new ArrayList<>(){};
+        
+        try {
+            Conexion conect = new Conexion();
+            Connection conn = conect.tenerConexion();
+            
+            String query = "SELECT * FROM alumnos";
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            
+            
+            ResultSet resu = stmt.executeQuery();
+            
+            while (resu.next()) {
+                Alumnos alumno = new Alumnos();
+
+                
+                alumno.setIdAlumno(resu.getInt("idalumno"));
+                alumno.setRut(resu.getInt("rut"));
+                alumno.setNombre(resu.getString("nombre"));
+                alumno.setApellido(resu.getString("apellido"));
+                alumno.setCurso(resu.getString("curso"));
+                alumno.setPase_movilidad(resu.getBoolean("pase_movilidad"));             
+                
+                lista.add(alumno);
+                            
+            }
+            resu.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("Error al listar alumnos");
+        }
+        return lista;    
+        
+        
+       
+            
+            
+            
+            
+        
+ 
+ }   
     
      
     
