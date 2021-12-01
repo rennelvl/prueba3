@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import tablas.Docentes;
 
 /**
  *
@@ -151,7 +152,7 @@ public class Registro {
             
             
         } catch (SQLException e) {
-            System.out.println("Error al listar el libro");
+            System.out.println("Error al listar ");
             
         } return alumno;
     }    
@@ -202,6 +203,190 @@ public class Registro {
  
  }   
     
-     
+     public boolean agregarDocente(Docentes docente){
+    
+        try {
+            Conexion conect = new Conexion();
+            Connection conn = conect.tenerConexion();
+            
+            String query = "INSERT INTO docentes(rutdocente,nombredocente,apellidodocente,especialidad,pase_docente) VALUES (?,?,?,?,?)";
+            PreparedStatement stmt = conn.prepareStatement(query);
+            stmt.setInt(1, docente.getRutDocente());
+            stmt.setString(2, docente.getNombreDocente());
+            stmt.setString(3, docente.getApellidoDocente());
+            stmt.setString(4, docente.getEspecialidad());
+            stmt.setBoolean(5, docente.isPase_docente());
+            
+            stmt.executeUpdate();
+            stmt.close();
+            conn.close();
+            return true;
+                      
+            
+            
+            
+        } catch (SQLException e) {
+            System.out.println("Error al agregar Docente");                      
+            return false;
+        } catch (Exception e){
+            System.out.println("Error al agregar Docente ");
+            return false;
+        }
+    
+      
+    
+    
+    
+    }
+    
+    
+    public boolean actualizarDocente(Docentes docente){
+    
+        try {
+            Conexion conect = new Conexion();
+            Connection conn = conect.tenerConexion();
+            
+            String query = "UPDATE Docentes SET rutdocente= ?,nombredocente= ?,apellidodocente= ?,especialidad=?,pase_docente=? WHERE = iddocente";
+            PreparedStatement stmt = conn.prepareStatement(query);
+            stmt.setInt(1, docente.getRutDocente());
+            stmt.setString(2, docente.getNombreDocente());
+            stmt.setString(3, docente.getApellidoDocente());
+            stmt.setString(4, docente.getEspecialidad());
+            stmt.setBoolean(5, docente.isPase_docente());
+            stmt.setInt(6, docente.getIdDocente());
+            
+            stmt.executeUpdate();
+            stmt.close();
+            conn.close();
+            return true;
+            
+            
+            
+            
+            
+        } catch (SQLException e) {
+            System.out.println("Error al actualizar Docente");                      
+            return false;
+        } catch (Exception e){
+            System.out.println("Error al actualizar Docente ");
+            return false;
+        }
+        
+    
+    
+    
+    }
+    public boolean eliminarDocente(int idDocente){
+    
+        try {
+            Conexion conect = new Conexion();
+            Connection conn = conect.tenerConexion();
+            
+            String query = "DELETE FROM Docentes  WHERE iddocente =?";
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            stmt.setInt(1, idDocente);
+            
+            stmt.executeUpdate();
+            stmt.close();
+            conn.close();
+            return true;
+            
+            
+            
+            
+            
+        } catch (SQLException e) {
+            System.out.println("Error al eliminar Docente");                      
+            return false;
+        } catch (Exception e){
+            System.out.println("Error al eliminar Docente ");
+            return false;
+        }
+    
+    
+    
+    }
+    
+    public Docentes buscarporrutDocente(int rutDocente){
+        Docentes docente = new Docentes();
+        try {
+            Conexion conect = new Conexion();
+            Connection conn = conect.tenerConexion();
+            
+            String query = "SELECT * FROM docentes  WHERE rutdocente =?";
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            stmt.setInt(1, rutDocente);
+            
+            ResultSet resu = stmt.executeQuery();
+            
+            if (resu.next()) {
+                docente.setIdDocente(resu.getInt("iddocente"));
+                docente.setRutDocente(resu.getInt("rutDocente"));
+                docente.setNombreDocente(resu.getString("nombredocente"));
+                docente.setApellidoDocente(resu.getString("spellidodocente"));
+                docente.setEspecialidad(resu.getString("especialidad"));
+                docente.setPase_docente(resu.getBoolean("pase_docente"));             
+                              
+                            
+            }
+            resu.close();
+            stmt.close();
+            conn.close();
+            
+            
+            
+        } catch (SQLException e) {
+            System.out.println("Error al listar ");
+            
+        } return docente;
+    }    
+    public List<Docentes> buscarTodosDocentes(){
+        
+        List<Docentes> lista2 = new ArrayList<>(){};
+        
+        try {
+            Conexion conect = new Conexion();
+            Connection conn = conect.tenerConexion();
+            
+            String query = "SELECT * FROM Docentes";
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            
+            
+            ResultSet resu = stmt.executeQuery();
+            
+            while (resu.next()) {
+                Docentes docente = new Docentes();
+
+                
+                docente.setIdDocente(resu.getInt("iddocente"));
+                docente.setRutDocente(resu.getInt("rutDocente"));
+                docente.setNombreDocente(resu.getString("nombredocente"));
+                docente.setApellidoDocente(resu.getString("spellidodocente"));
+                docente.setEspecialidad(resu.getString("especialidad"));
+                docente.setPase_docente(resu.getBoolean("pase_docente"));             
+                
+                lista2.add(docente);
+                            
+            }
+            resu.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("Error al listar");
+        }
+        return lista2;    
+        
+        
+       
+            
+            
+            
+            
+        
+ 
+ }   
     
 }
