@@ -184,7 +184,7 @@ public class Promedio extends javax.swing.JFrame {
     }//GEN-LAST:event_jtxt_primerActionPerformed
 
     private void jbtn_salirpromedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_salirpromedioActionPerformed
-        System.exit(0);
+         dispose();
     }//GEN-LAST:event_jbtn_salirpromedioActionPerformed
 
     private void jbtn_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_limpiarActionPerformed

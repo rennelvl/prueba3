@@ -27,6 +27,13 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuBar3 = new javax.swing.JMenuBar();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -35,11 +42,28 @@ public class Menu extends javax.swing.JFrame {
         jmi_agregaralumno = new javax.swing.JMenuItem();
         jmi_mostraralumnos = new javax.swing.JMenuItem();
         jmi_eliminaralumno = new javax.swing.JMenuItem();
-        jmi_salir = new javax.swing.JMenuItem();
         jmi_agregarDocente = new javax.swing.JMenu();
         jmi_agregardocente = new javax.swing.JMenuItem();
         jmi_mostrardocente = new javax.swing.JMenuItem();
         jmi_eliminarDocente = new javax.swing.JMenuItem();
+        jmi_promedio = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu7 = new javax.swing.JMenu();
+        jmi_salir = new javax.swing.JMenuItem();
+
+        jMenu2.setText("File");
+        jMenuBar2.add(jMenu2);
+
+        jMenu3.setText("Edit");
+        jMenuBar2.add(jMenu3);
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenu4.setText("File");
+        jMenuBar3.add(jMenu4);
+
+        jMenu5.setText("Edit");
+        jMenuBar3.add(jMenu5);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,28 +125,59 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu1.add(jmi_eliminaralumno);
 
+        jMenuBar1.add(jMenu1);
+
+        jmi_agregarDocente.setText("Docentes");
+
+        jmi_agregardocente.setText("Agregar Docente");
+        jmi_agregardocente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_agregardocenteActionPerformed(evt);
+            }
+        });
+        jmi_agregarDocente.add(jmi_agregardocente);
+
+        jmi_mostrardocente.setText("Mostrar Docentes");
+        jmi_mostrardocente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_mostrardocenteActionPerformed(evt);
+            }
+        });
+        jmi_agregarDocente.add(jmi_mostrardocente);
+
+        jmi_eliminarDocente.setText("Eliminar Docente");
+        jmi_eliminarDocente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_eliminarDocenteActionPerformed(evt);
+            }
+        });
+        jmi_agregarDocente.add(jmi_eliminarDocente);
+
+        jMenuBar1.add(jmi_agregarDocente);
+
+        jmi_promedio.setText("Promedio ");
+
+        jMenuItem2.setText("Promedio Anual");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jmi_promedio.add(jMenuItem2);
+
+        jMenuBar1.add(jmi_promedio);
+
+        jMenu7.setText("Fin");
+
         jmi_salir.setText("Salir");
         jmi_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jmi_salirActionPerformed(evt);
             }
         });
-        jMenu1.add(jmi_salir);
+        jMenu7.add(jmi_salir);
 
-        jMenuBar1.add(jMenu1);
-
-        jmi_agregarDocente.setText("Docentes");
-
-        jmi_agregardocente.setText("Agregar Docente");
-        jmi_agregarDocente.add(jmi_agregardocente);
-
-        jmi_mostrardocente.setText("Mostrar Docentes");
-        jmi_agregarDocente.add(jmi_mostrardocente);
-
-        jmi_eliminarDocente.setText("Eliminar Docente");
-        jmi_agregarDocente.add(jmi_eliminarDocente);
-
-        jMenuBar1.add(jmi_agregarDocente);
+        jMenuBar1.add(jMenu7);
 
         setJMenuBar(jMenuBar1);
 
@@ -134,7 +189,7 @@ public class Menu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -155,6 +210,21 @@ public class Menu extends javax.swing.JFrame {
     private void jmi_eliminaralumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_eliminaralumnoActionPerformed
         new Eliminar().setVisible(true);
     }//GEN-LAST:event_jmi_eliminaralumnoActionPerformed
+
+    private void jmi_agregardocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_agregardocenteActionPerformed
+            new AgregarDocente().setVisible(true);    }//GEN-LAST:event_jmi_agregardocenteActionPerformed
+
+    private void jmi_eliminarDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_eliminarDocenteActionPerformed
+        new EliminarDocente().setVisible(true);
+    }//GEN-LAST:event_jmi_eliminarDocenteActionPerformed
+
+    private void jmi_mostrardocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_mostrardocenteActionPerformed
+        new MostrarDocente().setVisible(true);
+    }//GEN-LAST:event_jmi_mostrardocenteActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        new Promedio().setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,7 +265,16 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuBar jMenuBar3;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu jmi_agregarDocente;
     private javax.swing.JMenuItem jmi_agregaralumno;
@@ -204,6 +283,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmi_eliminaralumno;
     private javax.swing.JMenuItem jmi_mostraralumnos;
     private javax.swing.JMenuItem jmi_mostrardocente;
+    private javax.swing.JMenu jmi_promedio;
     private javax.swing.JMenuItem jmi_salir;
     // End of variables declaration//GEN-END:variables
 }

@@ -34,6 +34,7 @@ public class EliminarDocente extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jtxt_eliminarrutdocente = new javax.swing.JTextField();
         jbtn_eliminardocente = new javax.swing.JButton();
+        jbtn_salirelimdoc = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,6 +51,13 @@ public class EliminarDocente extends javax.swing.JFrame {
             }
         });
 
+        jbtn_salirelimdoc.setText("Salir");
+        jbtn_salirelimdoc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_salirelimdocActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -63,7 +71,8 @@ public class EliminarDocente extends javax.swing.JFrame {
                         .addComponent(jtxt_eliminarrutdocente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(63, 63, 63)
                         .addComponent(jbtn_eliminardocente))
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1)
+                    .addComponent(jbtn_salirelimdoc, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -76,7 +85,9 @@ public class EliminarDocente extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jtxt_eliminarrutdocente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbtn_eliminardocente))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
+                .addComponent(jbtn_salirelimdoc)
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         pack();
@@ -96,6 +107,10 @@ public class EliminarDocente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "no se pudo eliminar", "aviso", 2);
         }
     }//GEN-LAST:event_jbtn_eliminardocenteActionPerformed
+
+    private void jbtn_salirelimdocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_salirelimdocActionPerformed
+         dispose();
+    }//GEN-LAST:event_jbtn_salirelimdocActionPerformed
 
 //    /**
 //     * @param args the command line arguments
@@ -136,6 +151,7 @@ public class EliminarDocente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton jbtn_eliminardocente;
+    private javax.swing.JButton jbtn_salirelimdoc;
     private javax.swing.JTextField jtxt_eliminarrutdocente;
     // End of variables declaration//GEN-END:variables
 }

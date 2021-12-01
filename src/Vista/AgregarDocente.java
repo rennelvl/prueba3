@@ -135,6 +135,11 @@ public class AgregarDocente extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(102, 0, 153));
 
         jbtn_salirdocente.setText("Salir");
+        jbtn_salirdocente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_salirdocenteActionPerformed(evt);
+            }
+        });
 
         jbtn_guardardocente.setText("Guardar");
         jbtn_guardardocente.addActionListener(new java.awt.event.ActionListener() {
@@ -236,6 +241,10 @@ public class AgregarDocente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "No se agrego Docente", "Información", 0);
         }
     }//GEN-LAST:event_jbtn_guardardocenteActionPerformed
+
+    private void jbtn_salirdocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_salirdocenteActionPerformed
+        dispose();
+    }//GEN-LAST:event_jbtn_salirdocenteActionPerformed
 
 //    /**
 //     * @param args the command line arguments

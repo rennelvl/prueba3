@@ -62,6 +62,11 @@ public class AgregarAlumno extends javax.swing.JFrame {
         });
 
         jbtn_saliralumno.setText("Salir");
+        jbtn_saliralumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_saliralumnoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -233,6 +238,10 @@ public class AgregarAlumno extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jbtn_guardaralumnoActionPerformed
+
+    private void jbtn_saliralumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_saliralumnoActionPerformed
+        dispose();
+    }//GEN-LAST:event_jbtn_saliralumnoActionPerformed
 
 //    /**
 //     * @param args the command line arguments

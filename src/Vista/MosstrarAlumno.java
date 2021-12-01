@@ -39,12 +39,18 @@ public class MosstrarAlumno extends javax.swing.JFrame {
         jbtn_buscaralumno = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtbl_datosalumnos = new javax.swing.JTable();
+        jbtn_salirmostalum = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("RUT:");
 
         jtxt_buscarrut.setText("sin digito verificador");
+        jtxt_buscarrut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxt_buscarrutActionPerformed(evt);
+            }
+        });
 
         jbtn_buscaralumno.setText("Buscar");
         jbtn_buscaralumno.addActionListener(new java.awt.event.ActionListener() {
@@ -81,6 +87,13 @@ public class MosstrarAlumno extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jtbl_datosalumnos);
 
+        jbtn_salirmostalum.setText("Salir");
+        jbtn_salirmostalum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_salirmostalumActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -94,7 +107,8 @@ public class MosstrarAlumno extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jtxt_buscarrut, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
-                        .addComponent(jbtn_buscaralumno)))
+                        .addComponent(jbtn_buscaralumno))
+                    .addComponent(jbtn_salirmostalum, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -107,7 +121,9 @@ public class MosstrarAlumno extends javax.swing.JFrame {
                     .addComponent(jbtn_buscaralumno))
                 .addGap(46, 46, 46)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addGap(61, 61, 61)
+                .addComponent(jbtn_salirmostalum)
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         pack();
@@ -154,6 +170,14 @@ public class MosstrarAlumno extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jbtn_buscaralumnoActionPerformed
 
+    private void jtxt_buscarrutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_buscarrutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_buscarrutActionPerformed
+
+    private void jbtn_salirmostalumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_salirmostalumActionPerformed
+        dispose();
+    }//GEN-LAST:event_jbtn_salirmostalumActionPerformed
+
 //    /**
 //     * @param args the command line arguments
 //     */
@@ -193,6 +217,7 @@ public class MosstrarAlumno extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbtn_buscaralumno;
+    private javax.swing.JButton jbtn_salirmostalum;
     private javax.swing.JTable jtbl_datosalumnos;
     private javax.swing.JTextField jtxt_buscarrut;
     // End of variables declaration//GEN-END:variables
