@@ -36,9 +36,10 @@ public class Menu extends javax.swing.JFrame {
         jmi_mostraralumnos = new javax.swing.JMenuItem();
         jmi_eliminaralumno = new javax.swing.JMenuItem();
         jmi_salir = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        jmi_agregarDocente = new javax.swing.JMenu();
         jmi_agregardocente = new javax.swing.JMenuItem();
         jmi_mostrardocente = new javax.swing.JMenuItem();
+        jmi_eliminarDocente = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,15 +111,18 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Docentes");
+        jmi_agregarDocente.setText("Docentes");
 
         jmi_agregardocente.setText("Agregar Docente");
-        jMenu2.add(jmi_agregardocente);
+        jmi_agregarDocente.add(jmi_agregardocente);
 
         jmi_mostrardocente.setText("Mostrar Docentes");
-        jMenu2.add(jmi_mostrardocente);
+        jmi_agregarDocente.add(jmi_mostrardocente);
 
-        jMenuBar1.add(jMenu2);
+        jmi_eliminarDocente.setText("Eliminar Docente");
+        jmi_agregarDocente.add(jmi_eliminarDocente);
+
+        jMenuBar1.add(jmi_agregarDocente);
 
         setJMenuBar(jMenuBar1);
 
@@ -191,11 +195,12 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu jmi_agregarDocente;
     private javax.swing.JMenuItem jmi_agregaralumno;
     private javax.swing.JMenuItem jmi_agregardocente;
+    private javax.swing.JMenuItem jmi_eliminarDocente;
     private javax.swing.JMenuItem jmi_eliminaralumno;
     private javax.swing.JMenuItem jmi_mostraralumnos;
     private javax.swing.JMenuItem jmi_mostrardocente;

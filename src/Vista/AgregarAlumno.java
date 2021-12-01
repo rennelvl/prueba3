@@ -197,13 +197,13 @@ public class AgregarAlumno extends javax.swing.JFrame {
            return;
        }
         apellido = this.jtxt_apellidoalumno.getText();
-       if (nombre.isEmpty()){
+       if (apellido.isEmpty()){
            JOptionPane.showMessageDialog(this, "Ingrese apellido", "Validación", 2);
            this.jtxt_apellidoalumno.requestFocus();
            return;
        }   
         curso = this.jtxt_curso.getText();
-       if (nombre.isEmpty()){
+       if (curso.isEmpty()){
            JOptionPane.showMessageDialog(this, "Ingrese curso", "Validación", 2);
            this.jtxt_curso.requestFocus();
            return;

@@ -43,7 +43,7 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu2">
+        <Menu class="javax.swing.JMenu" name="jmi_agregarDocente">
           <Properties>
             <Property name="text" type="java.lang.String" value="Docentes"/>
           </Properties>
@@ -56,6 +56,11 @@
             <MenuItem class="javax.swing.JMenuItem" name="jmi_mostrardocente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Mostrar Docentes"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jmi_eliminarDocente">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Eliminar Docente"/>
               </Properties>
             </MenuItem>
           </SubComponents>
